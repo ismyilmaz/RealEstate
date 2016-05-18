@@ -1,0 +1,25 @@
+﻿@model IEnumerable<RealEstateApp.Models.Kind>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Site.cshtml";
+}
+
+<div class="portlet x12">
+    <div class="portlet-header"><h4>@Html.Language("", "KindTitle")</h4></div>
+    <div id="info">
+        <div class="buttonrow">
+            <a href="@Url.Action("Create", "Kind")" class="aCreate" title="@Html.Language("", "KindCreateTitle")">
+                <button class="btn">@Html.Language("", "Create")</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="portlet-content">
+        <br />
+
+        <a name="basic"></a>
+
+        @Html.Partial("Partial/KindList", Model)
+
+    </div>
+</div>

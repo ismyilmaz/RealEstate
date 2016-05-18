@@ -1,0 +1,28 @@
+﻿@model IEnumerable<RealEstateApp.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Site.cshtml";
+}
+
+<div class="portlet x12">
+    <div class="portlet-header"><h4>@Html.Language("", "CategoryTitle")</h4></div>
+    <div id="info">
+        <div class="buttonrow">
+            <a href="@Url.Action("Create", "Category")" class="aCreate" title="@Html.Language("", "CategoryCreateTitle")">
+                <button class="btn">@Html.Language("", "Create")</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="portlet-content">
+        <br />
+
+        <a name="basic"></a>
+
+        @Html.Partial("Partial/CategoryList",Model)
+
+
+
+    </div>
+</div>

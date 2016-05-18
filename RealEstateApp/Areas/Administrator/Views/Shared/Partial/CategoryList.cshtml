@@ -1,0 +1,50 @@
+﻿@model IEnumerable<RealEstateApp.Models.Category>
+<div id="Info">
+    <table cellpadding="0" cellspacing="0" border="0" class="display">
+        <thead>
+            <tr>
+                <th>
+                    @Html.Language("", "ListCategoryName")
+                </th>
+                <th style="width: 2%">
+                    @Html.Language("", "ListCategoryStatus")
+                </th>
+                <th style="width: 2%">
+                    @Html.Language("", "Edit")
+                </th>
+                <th style="width: 2%">
+                    @Html.Language("", "Delete")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @if (@item.Status == true)
+                        {<img src="/Areas/Administrator/Content/images/False.png" />
+                        }
+                        else
+                        {
+                            <img src="/Areas/Administrator/Content/images/True.png" />
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", new {@id = item.ID})" class="aModal" title="@item.Name">
+                            <img src="/Areas/Administrator/Content/images/edit.png" alt="Alternate Text" />
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Delete", new {@id = item.ID})" class="deleteModel" title="@item.Name">
+                            <img src="/Areas/Administrator/Content/images/cross.png" alt="Alternate Text" />
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
