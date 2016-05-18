@@ -23,5 +23,6 @@ namespace RealEstateApp.Models
         public string Name { get; set; }
         [DisplayName("Durumu: ")]
         public bool Status { get; set; }
+        //change
     }
 }
