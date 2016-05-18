@@ -25,5 +25,6 @@ namespace RealEstateApp.Models
         [DisplayName("Durumu: ")]
         public bool Status { get; set; }
         //chage
+        //change 2
     }
 }
